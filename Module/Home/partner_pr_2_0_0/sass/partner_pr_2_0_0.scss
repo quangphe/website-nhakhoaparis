@@ -1,0 +1,50 @@
+.partner_pr_2_0_0 {
+    padding: 30px 0;
+
+    &__title {
+        color: var(--primary-color);
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 30px 0;
+    }
+
+    &__item {
+        width: 25%;
+    }
+
+    &__pic {
+        width: 170px;
+        display: block;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &__pic {
+            width: 145px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__item {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        &__pic {
+            width: 70%;
+        }
+    }
+}
