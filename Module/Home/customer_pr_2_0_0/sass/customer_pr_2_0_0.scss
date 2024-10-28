@@ -1,1 +1,296 @@
-.customer_pr_2_0_0 {}
+.customer_pr_2_0_0 {
+    padding: 30px 0;
+    overflow: hidden;
+    background-color: #e3f4fd;
+
+    &__title {
+        color: var(--primary-color);
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+    &__carousel {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 48vh;
+    }
+
+    &__itemCarousel {
+        height: 25rem;
+        width: 50rem;
+        border-radius: 3px;
+        overflow: hidden;
+        position: absolute;
+        transform: translate(-50%, -50%) scale(0.1);
+        z-index: 0;
+        transition: all 0.2s linear;
+        top: 50%;
+        left: 50%;
+    }
+
+    &__boxFeedback {
+        display: flex;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    &__boxText {
+        width: 60%;
+    }
+
+    &__nameCustomer {
+        color: var(--black-color);
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    &__feedback {
+        color: var(--black-color);
+        font-size: 1rem;
+    }
+
+    &__pic {
+        flex: 1;
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .carouselCustomer--main {
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 2;
+        cursor: pointer;
+    }
+    
+    .carouselCustomer--left {
+        transform: translate(-160%, -50%) scale(0.9);
+        z-index: 1;
+    }
+    
+    .carouselCustomer--right {
+        transform: translate(60%, -50%) scale(0.9);
+        z-index: 1;
+    }
+    
+    .carouselCustomer--left,
+    .carouselCustomer--right {
+        // filter: grayscale(80%);
+        opacity: 0.5;
+    }
+    
+    .carousel__btns {
+        position: absolute;
+        transform: translate(0%, 22rem);
+        display: flex;
+        gap: 53rem;
+        top: -10rem;
+    }
+    
+    .carousel__btn {
+        height: 5rem;
+        width: 5rem;
+        color: #000;
+        cursor: pointer;
+        border: none;
+        background-color: unset;
+    }
+    
+    .carousel__btn svg {
+        height: 1.8rem;
+        width: 1.8rem;
+    }
+
+    @media (max-width: 1440px) {
+        .carousel__btns {
+            top: -10rem;
+        }
+    }
+    
+    @media (max-width: 1280px) {
+        &__carousel {
+            min-height: 54vh;
+        }
+    
+        &__itemCarousel {
+            width: 48rem;
+            height: 25rem;
+        }
+    
+        .carousel__btns {
+            top: -12rem;
+            gap: 50rem;
+        }
+    }
+    
+    @media (max-width: 1180px) {
+        &__carousel {
+            min-height: 42vh;
+        }
+    
+        &__itemCarousel {
+            width: 40rem;
+            height: 20rem;
+        }
+    
+        .carousel__btns {
+            top: -14rem;
+            gap: 42rem;
+        }
+    }
+    
+    @media (max-width: 912px) {
+        &__carousel {
+            min-height: 33vh;
+        }
+    
+        &__itemCarousel {
+            width: 45rem;
+            height: 23rem;
+        }
+    
+        .carousel__btns {
+            top: -12rem;
+            gap: 45rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        &__carousel {
+            min-height: 38vh;
+        }
+
+        .carousel__btns {
+            gap: 43rem;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        &__title {
+            margin-bottom: 22px;
+        }
+        &__carousel {
+            min-height: 36vh;
+        }
+    
+        &__itemCarousel {
+            width: 24rem;
+            height: 0rem;
+            overflow: visible;
+            top: 0;
+        }
+
+        &__boxFeedback {
+            flex-direction: column;
+        }
+
+        &__boxText {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        .carousel__btns {
+            top: -14rem;
+            gap: 21rem;
+        }
+    }
+    
+    @media (max-width: 414px) {
+        &__carousel {
+            min-height: 40vh;
+        }
+
+        &__itemCarousel {
+            width: 22rem;
+        }
+
+        .carousel__btns {
+            gap: 20rem;
+        }
+    }
+    
+    @media (max-width: 390px) {
+        &__title {
+            font-size: 1.6rem;
+        }
+
+        &__carousel {
+            min-height: 45vh;
+        }
+
+        &__itemCarousel {
+            width: 20rem;
+        }
+
+        &__feedback {
+            font-size: 0.9rem;
+        }
+    
+        .carousel__btns {
+            gap: 18rem;
+        }
+    }
+    
+    @media (max-width: 375px) {
+        &__carousel {
+            min-height: 50vh;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        &__carousel {
+            min-height: 45vh;
+        }
+
+        .carousel__btns {
+            gap: 17rem;
+        }
+    }
+    
+    @media (max-width: 344px) {
+        &__title {
+            font-size: 1.4rem;
+        }
+        
+        &__carousel {
+            min-height: 38vh;
+        }
+
+        &__itemCarousel {
+            width: 18rem;
+        }
+
+        &__boxFeedback {
+            padding: 18px;
+        }
+
+        &__nameCustomer {
+            font-size: 1rem;
+        }
+
+        .carousel__btns {
+            gap: 16rem;
+        }
+    }
+    
+    @media (max-width: 320px) {  
+        .carousel__btns {
+            gap: 15rem;
+        }
+    }
+    
+    @media (max-width: 280px) {
+        &__itemCarousel {
+            width: 16rem;
+        }
+    
+        .carousel__btns {
+            gap: 12rem;
+        }
+    }
+}

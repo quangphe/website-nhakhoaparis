@@ -1,0 +1,47 @@
+.operations_pr_2_0_0 {
+    padding: 30px 0;
+
+    &__title {
+        color: var(--primary-color);
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+    &__box {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    &__boxLeft,
+    &__boxRight {
+        width: 28%;
+        margin: 0 10px;
+    }
+
+    &__boxMid {
+        flex: 1;
+    }
+
+    &__boxPic {
+        display: flex;
+    }
+
+    &__boxPicLeft,
+    &__boxPicRight {
+        margin: 0 5px;
+    }
+
+    &__pic {
+        margin-bottom: 10px;
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    @media (max-width: 600px) {
+        display: none;
+    } 
+}
