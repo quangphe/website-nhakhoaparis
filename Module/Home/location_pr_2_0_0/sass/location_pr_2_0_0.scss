@@ -1,0 +1,209 @@
+.location_pr_2_0_0 {
+    padding: 30px 0;
+
+    &__title {
+        color: var(--primary-color);
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+    &__box {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    &__boxLeft,
+    &__boxRight {
+        width: 50%;
+    }
+
+    &__boxLeft {
+        padding: 20px;
+        margin-right: 15px;
+        border: 3px solid var(--third-color);
+        border-radius: 10px;
+    }
+
+    &__titleAddress {
+        color: var(--secondary-color);
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    &__select {
+        background-color: var(--third-color);
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 20px;
+    }
+
+    &__item {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    &__picAddress {
+        width: 35%;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+    }
+
+    &__infoAddress {
+        flex: 1;
+        margin-left: 15px;
+    }
+
+    &__nameAddress {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    &__descAddress {
+        font-size: 0.9rem;
+        margin: 4px 0;
+    }
+
+    &__btnAddress {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    &__btn {
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        margin: 0 5px;
+        width: 46%;
+        cursor: pointer;
+        transition: all 0.3s linear;
+
+        span {
+            color: #fff;
+            font-size: 1rem;
+            padding-left: 20px;
+        }
+
+        &.btnHotline {
+            background-color: var(--secondary-color);
+
+            &:hover {
+                background-color: #5bcaef;
+                transition: all 0.3s linear;
+            }
+        }
+
+        &.btnBooking {
+            background-color: var(--primary-color);
+
+            &:hover {
+                background-color: #082677;
+                transition: all 0.3s linear;
+            }
+        }
+    }
+
+    &__boxSlide {
+        position: relative;
+    }
+
+    &__slidePic {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    &__picSlide {
+        width: 25%;
+        margin: 0 5px;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+    }
+
+    &__btn {
+        background-color: var(--secondary-color);
+        color: #fff;
+        font-size: 0.9rem;
+        padding: 4px 10px;
+        border-radius: 20px;
+        transition: all .3s linear;
+
+        &:hover {
+            background-color: #5ecdf1;
+            transition: all .3s linear;
+        }
+    }
+
+    &__controlsContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+    &__dots {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    &__prev,
+    &__next {
+        background: var(--primary-color);
+        color: #fff;
+        font-size: 16px;
+        margin: 0;
+        padding: 2px 10px;
+        height: auto;
+        border: none;
+        border-radius: 20px;
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__dot {
+        width: 10px;
+        height: 10px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
+
+        &.active {
+            background-color: #fff;
+            border: 1px solid #fff;
+        }
+    }
+
+    &__maps {
+        margin-top: 12px;
+
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
