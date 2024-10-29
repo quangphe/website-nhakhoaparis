@@ -1,0 +1,474 @@
+.header_pr_2_0_0 {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    top: 0;
+
+    &.menufix {
+        box-shadow: 0 1px 25px rgb(0 0 0 / 10%);
+        background: rgba(255, 255, 255, .9);
+
+        .header_6_0_0__boxTop {
+            display: none;
+        }
+
+        .header_6_0_0__box1 {
+            display: none;
+        }
+
+        .header_6_0_0__box2 {
+            background: none;
+        }
+
+        .header_6_0_0__box2__logosb {
+            display: block;
+        }
+    }
+
+    &__newLabel {
+        text-align: center;
+        padding-top: 4px;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+
+    &__box1 {
+        background-color: #fff;
+    }
+
+    &__box1Main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+
+    &__box1Left,
+    &__box1Right {
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    &__box1Logo {
+        width: 110px;
+        position: relative;
+        margin: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__box1Call {
+        margin-left: 25px;
+        text-align: center;
+        position: relative;
+
+        ul {
+            list-style: none;
+
+            &::before {
+                background: url(https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Header/header_6_0_0/images/icon2.jpg) 0 center no-repeat;
+                content: "";
+                position: absolute;
+                top: 20px;
+                left: 5px;
+                width: 30px;
+                height: 30px;
+                background-size: 100%;
+            }
+
+            li {
+                color: #000;
+                font-size: 13px;
+            }
+        }
+    }
+
+    &__box1Regtv {
+        font-size: 13px;
+        display: block;
+        color: #fff;
+        background: #0056A4;
+        text-align: center;
+        padding: 3px 20px;
+        border-radius: 50px;
+        margin: 0 15px;
+    }
+
+    &__iconMid {
+        display: none;
+    }
+
+    &__box1Button {
+        background: #6DCFF6;
+        outline: none;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 100%;
+        padding: 8px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    &__box2 {
+        background-color: #EBECF0;
+        padding: 0;
+
+        &__logosb {
+            display: none;
+        }
+
+        &__menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        &__menuSub {
+            display: flex;
+            align-items: center;
+            border-top: 3px solid transparent;
+            padding: 8px 12px;
+
+            &:hover {
+                border-top: 3px solid #0056A2;
+
+                .header_6_0_0__box2__menuSubBox {
+                    display: block;
+                    animation: opac 0.4s;
+                }
+            }
+
+            .menu-icon {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+                text-align: right;
+            }
+        }
+
+        &__title {
+            padding: 5px 10px;
+            display: block;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        &__menuSubBox {
+            display: none;
+            position: absolute;
+            width: 100%;
+            right: 0px;
+            top: 60px;
+            padding: 15px 25px;
+            font-size: 1rem;
+            color: #000;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+
+            .titleChild {
+                color: #307DAD;
+                text-transform: uppercase;
+                font-size: 15px;
+                margin: 20px 0 0;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+                margin-top: 10px;
+
+                li {
+                    border-bottom: 1px solid #f1f1f1;
+                    padding-bottom: 5px;
+                    margin-bottom: 5px;
+                    position: relative;
+                    text-transform: none;
+
+                    a {
+                        &:hover {
+                            color: #0056A4;
+                            font-weight: 600;
+                        }
+
+                        &::after {
+                            content: "»";
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            top: 5px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__box2Main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 1200px) {
+        &__boxTop {
+            background-size: 100%;
+        }
+
+        &__box1Main {
+            justify-content: center;
+        }
+
+        &__box1Right {
+            position: absolute;
+            right: 0;
+            gap: 18px;
+        }
+
+        &__box1Address,
+        &__box1Regtv {
+            display: none;
+        }
+
+        &__iconMid {
+            display: block;
+            position: absolute;
+            left: 0;
+            color: #0056a2;
+            font-size: 40px;
+        }
+
+        &__box2Main {
+            flex-direction: column;
+        }
+
+        &__box2 {
+            display: none;
+            width: 270px;
+            background: #fff;
+            position: fixed;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 3;
+            overflow: auto;
+            padding-bottom: 64px;
+
+            &__logosb {
+                display: block;
+
+                img {
+                    max-width: 100%;
+                    margin: 20px 40px;
+                }
+            }
+
+            &__menu {
+                display: block;
+                margin: 5px 0;
+                width: 100%;
+            }
+
+            &__menuSub {
+                position: relative;
+                padding: 7px 0;
+                border-bottom: 1px dashed #ccc;
+                border-top: none;
+                display: block;
+
+                &.active {
+                    .header_6_0_0__box2__menuSubBox {
+                        display: block !important;
+                    }
+                }
+
+                .menu-icon {
+                    display: block;
+                    font-style: normal;
+                    font-weight: 500;
+                }
+            }
+
+            &__menuSubBox {
+                position: inherit;
+                top: 0;
+                right: 0;
+                border-radius: 0;
+                width: 100%;
+                padding: 10px;
+                background-color: #0055A4;
+                border: none;
+                display: none !important;
+
+                .col-lg-6,
+                .col-lg-4 {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: #fff;
+                }
+
+                ul {
+                    li {
+                        border-bottom: 1px dashed #ccc;
+
+                        a {
+                            color: #fff;
+                            padding: 0;
+                            border-top: none !important;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .titleChild {
+                    color: #fff;
+                }
+            }
+
+            &__title {
+                text-align: left;
+                padding: 5px 12px;
+
+                br {
+                    display: none;
+                }
+            }
+
+            &.active {
+                display: block;
+                animation: animateleft 0.4s;
+            }
+
+            .container {
+                display: block;
+                width: 270px;
+                padding: 0;
+            }
+        }
+
+        &__box3 {
+            background: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100%;
+            content: "";
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            animation: opac 0.4s;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        box-shadow: 0 1px 25px rgba(0, 0, 0, .1);
+
+        &.menufix {
+            .header_6_0_0__box1 {
+                display: block;
+            }
+
+            .header_6_0_0__box2 {
+                background: #fff;
+            }
+        }
+
+        &__box2 {
+            &__title {
+                padding: 10px 12px;
+            }
+
+            &__menuSub {
+                padding: 0;
+
+                &:hover {
+                    border-top: unset;
+                }
+
+                &.active {
+                    .menu-icon {
+                        right: 2px;
+                    }
+                }
+            }
+
+            &__menuSubBox {
+                padding: 0 10px;
+
+                ul li {
+                    padding: 5px 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 970px) {
+        &__boxTop {
+            display: none;
+        }
+
+        &__box1Logo {
+            width: 108px;
+            padding-top: 0;
+        }
+
+        &__box1Right {
+            right: 10px;
+            gap: 8px;
+        }
+
+        &__box1Call {
+            ul {
+                &::before {
+                    top: -6px;
+                }
+
+                li {
+                    display: none;
+                }
+            }
+        }
+
+        &__iconMid {
+            left: 10px;
+        }
+    }
+}
