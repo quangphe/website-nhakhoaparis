@@ -1,5 +1,5 @@
 .customer_pr_2_0_0 {
-    padding: 30px 0;
+    padding: 30px 0 80px;
     overflow: hidden;
     background-color: #e3f4fd;
 
@@ -55,6 +55,7 @@
 
     &__pic {
         flex: 1;
+
         img {
             width: 100%;
             height: auto;
@@ -67,23 +68,23 @@
         z-index: 2;
         cursor: pointer;
     }
-    
+
     .carouselCustomer--left {
         transform: translate(-160%, -50%) scale(0.9);
         z-index: 1;
     }
-    
+
     .carouselCustomer--right {
         transform: translate(60%, -50%) scale(0.9);
         z-index: 1;
     }
-    
+
     .carouselCustomer--left,
     .carouselCustomer--right {
         // filter: grayscale(80%);
         opacity: 0.5;
     }
-    
+
     .carousel__btns {
         position: absolute;
         transform: translate(0%, 22rem);
@@ -91,7 +92,7 @@
         gap: 53rem;
         top: -10rem;
     }
-    
+
     .carousel__btn {
         height: 5rem;
         width: 5rem;
@@ -100,7 +101,7 @@
         border: none;
         background-color: unset;
     }
-    
+
     .carousel__btn svg {
         height: 1.8rem;
         width: 1.8rem;
@@ -111,55 +112,55 @@
             top: -10rem;
         }
     }
-    
+
     @media (max-width: 1280px) {
         &__carousel {
             min-height: 54vh;
         }
-    
+
         &__itemCarousel {
             width: 48rem;
             height: 25rem;
         }
-    
+
         .carousel__btns {
             top: -12rem;
             gap: 50rem;
         }
     }
-    
+
     @media (max-width: 1180px) {
         &__carousel {
             min-height: 42vh;
         }
-    
+
         &__itemCarousel {
             width: 40rem;
             height: 20rem;
         }
-    
+
         .carousel__btns {
             top: -14rem;
             gap: 42rem;
         }
     }
-    
+
     @media (max-width: 912px) {
         &__carousel {
             min-height: 33vh;
         }
-    
+
         &__itemCarousel {
             width: 45rem;
             height: 23rem;
         }
-    
+
         .carousel__btns {
             top: -12rem;
             gap: 45rem;
         }
     }
-    
+
     @media (max-width: 768px) {
         &__carousel {
             min-height: 38vh;
@@ -169,15 +170,16 @@
             gap: 43rem;
         }
     }
-    
+
     @media (max-width: 600px) {
         &__title {
             margin-bottom: 22px;
         }
+
         &__carousel {
             min-height: 36vh;
         }
-    
+
         &__itemCarousel {
             width: 24rem;
             height: 0rem;
@@ -193,13 +195,13 @@
             width: 100%;
             margin-bottom: 20px;
         }
-    
+
         .carousel__btns {
             top: -14rem;
             gap: 21rem;
         }
     }
-    
+
     @media (max-width: 414px) {
         &__carousel {
             min-height: 40vh;
@@ -213,7 +215,7 @@
             gap: 20rem;
         }
     }
-    
+
     @media (max-width: 390px) {
         &__title {
             font-size: 1.6rem;
@@ -230,18 +232,18 @@
         &__feedback {
             font-size: 0.9rem;
         }
-    
+
         .carousel__btns {
             gap: 18rem;
         }
     }
-    
+
     @media (max-width: 375px) {
         &__carousel {
             min-height: 50vh;
         }
     }
-    
+
     @media (max-width: 360px) {
         &__carousel {
             min-height: 45vh;
@@ -251,12 +253,12 @@
             gap: 17rem;
         }
     }
-    
+
     @media (max-width: 344px) {
         &__title {
             font-size: 1.4rem;
         }
-        
+
         &__carousel {
             min-height: 38vh;
         }
@@ -277,18 +279,18 @@
             gap: 16rem;
         }
     }
-    
-    @media (max-width: 320px) {  
+
+    @media (max-width: 320px) {
         .carousel__btns {
             gap: 15rem;
         }
     }
-    
+
     @media (max-width: 280px) {
         &__itemCarousel {
             width: 16rem;
         }
-    
+
         .carousel__btns {
             gap: 12rem;
         }

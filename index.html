@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="assets/colors.min.css">
+    <link rel="stylesheet" href="https://huudinh.github.io/assets/sass/lib.min.css">
+</head>
+
+<style>
+    /* Header */
+    #header_pr_2_0_0 {
+        padding-top: 140px;
+    }
+
+    /* Slider */
+    .slider_pr_2_0_0 {
+        background-size: 1920px;
+        position: relative
+    }
+
+    .slider_pr_2_0_0 img {
+        display: block;
+        inset: 0;
+        width: 100%;
+        height: auto
+    }
+
+    .slider_pr_2_0_0__item {
+        position: relative;
+        top: 0
+    }
+
+    @media (max-width: 1024px) {
+        #header_pr_2_0_0 {
+            padding-top: 70px;
+        }
+    }
+</style>
+
+<body>
+    <!-- Header -->
+    <div id="header_pr_2_0_0"></div>
+
+    <!-- Slider -->
+    <section class="slider_pr_2_0_0">
+        <div class="slider_pr_2_0_0__itemSlide">
+            <a class="slider_pr_2_0_0__item" href="#">
+                <picture>
+                    <source media="(min-width: 767px)" width="1440" height="606"
+                        srcset="../../Module/Home/slider_pr_2_0_0/images/slider.jpg">
+                    <img width="428" height="250" src="../../Module/Home/slider_pr_2_0_0/images/slider-mb.jpg" alt="">
+                </picture>
+            </a>
+        </div>
+        <div class="slider_pr_2_0_0__itemSlide">
+            <a class="slider_pr_2_0_0__item" href="#">
+                <picture>
+                    <source media="(min-width: 767px)" width="1440" height="606"
+                        srcset="../../Module/Home/slider_pr_2_0_0/images/slider.jpg">
+                    <img width="428" height="250" src="../../Module/Home/slider_pr_2_0_0/images/slider-mb.jpg" alt="">
+                </picture>
+            </a>
+        </div>
+        <div class="slider_pr_2_0_0__itemSlide">
+            <a class="slider_pr_2_0_0__item" href="#">
+                <picture>
+                    <source media="(min-width: 767px)" width="1440" height="606"
+                        srcset="../../Module/Home/slider_pr_2_0_0/images/slider.jpg">
+                    <img width="428" height="250" src="../../Module/Home/slider_pr_2_0_0/images/slider-mb.jpg" alt="">
+                </picture>
+            </a>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll('.slider_pr_2_0_0__itemSlide');
+            let currentSlide = 0;
+
+            // Hàm hiển thị slide hiện tại
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = (i === index) ? 'block' : 'none';
+                });
+            }
+
+            // Hàm chuyển slide
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length; // Tăng chỉ số slide và quay lại nếu vượt quá số lượng slide
+                showSlide(currentSlide);
+            }
+
+            // Hiển thị slide đầu tiên
+            showSlide(currentSlide);
+
+            // Chuyển slide sau mỗi 5 giây
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+
+    <!-- List Icon -->
+    <div id="icons_pr_2_0_0"></div>
+
+    <!-- Điểm nổi bật ở Nha Khoa Paris -->
+    <div id="outstanding_pr_2_0_0"></div>
+
+    <!-- Chăm Sóc Sức Khỏe Răng Miệng Toàn Diện -->
+    <div id="service_pr_2_0_0"></div>
+
+    <!-- Dịch Vụ Đang Được Ưa Chuộng -->
+    <div id="price_pr_2_0_0"></div>
+
+    <!-- Gặp Gỡ Đội Ngũ Bác Sĩ Răng Hàm Mặt Hàng Đầu -->
+    <div id="doctor_pr_2_0_0"></div>
+
+    <!-- Video Trải Nghiệm Khách Hàng Tại Nha Khoa Paris -->
+    <div id="video_pr_2_0_0"></div>
+
+    <!-- Hiệu Quả Trước Và Sau Điều Trị Tại Nha Khoa Paris -->
+    <div id="customer_pr_2_0_0"></div>
+    <div id="check_pr_2_0_0"></div>
+
+    <!-- Hoạt Động Chi Nhánh Nha Khoa Paris -->
+    <div id="operations_pr_2_0_0"></div>
+
+    <!-- Đối tác và Báo chí -->
+    <div id="partner_pr_2_0_0"></div>
+
+    <!-- Tin Tức Nổi Bật -->
+    <div id="news_pr_2_0_0"></div>
+
+    <!-- Hệ Thống Nha Khoa Tiêu Chuẩn Pháp -->
+    <div id="system_pr_2_0_0"></div>
+
+    <!-- Cam Kết Nha Khoa Paris -->
+    <!-- <div id="regist_pr_2_0_0"></div> -->
+
+    <!-- Tìm Nha Khoa Paris Gần Nhất -->
+    <div id="location_pr_2_0_0"></div>
+
+    <!-- Footer -->
+    <div id="footer_pr_2_0_0"></div>
+</body>
+
+<script src="https://huudinh.github.io/assets/js/lib.min.js"></script>
+<script src="https://huudinh.github.io/assets/js/module.min.js"></script>
+<script src="https://huudinh.github.io/assets/js/tiny-slider.min.js"></script>
+
+<script>
+    renderModule('Header', 'header_pr_2_0_0', '', 'logic');
+    // renderModule('Module/Home', 'slider_pr_2_0_0', '', '');
+    renderModule('Module/Home', 'icons_pr_2_0_0', '', '');
+    renderModule('Module/Home', 'outstanding_pr_2_0_0', '', '');
+    renderModule('Module/Home', 'service_pr_2_0_0', '', '');
+    renderModule('Module/Home', 'service_pr_2_0_0', '', '');
+    renderModule('Module/Home', 'price_pr_2_0_0', '', 'logic');
+    renderModule('Module/Home', 'doctor_pr_2_0_0', '', 'logic');
+    renderModule('Module/Home', 'video_pr_2_0_0', '', 'logic');
+    renderModule('Module/Home', 'customer_pr_2_0_0', '', 'logic');
+    renderModule('Module/Home', 'check_pr_2_0_0', '', 'logic');
+    renderModule('Module/Home', 'operations_pr_2_0_0', '', '');
+    renderModule('Module/Home', 'partner_pr_2_0_0', '', '');
+    renderModule('Module/Home', 'news_pr_2_0_0', '', '');
+    renderModule('Module/Home', 'system_pr_2_0_0', '', '');
+    // renderModule('Module/Home', 'regist_pr_2_0_0', '', 'logic');
+    renderModule('Module/Home', 'location_pr_2_0_0', '', 'logic');
+    renderModule('Footer', 'footer_pr_2_0_0', '', '');
+</script>
+
+</html>
