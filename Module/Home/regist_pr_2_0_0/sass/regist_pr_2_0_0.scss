@@ -1,8 +1,8 @@
 .regist_pr_2_0_0 {
     &__title {
-        font-size: 26px;
+        font-size: 1.8rem;
         font-weight: 600;
-        color: #0055A4;
+        color: var(--primary-color);
         text-transform: uppercase;
         padding: 40px 0 15px;
         text-align: left;
@@ -120,81 +120,81 @@
             text-align: center;
         }
 
-        select {
-            width: 100%;
-            text-align: left;
-            text-align-last: center;
-            padding: 5px;
-            background-color: #6DCFF6;
-            border: none;
-            border-radius: 6px;
-            font-size: 18px;
-            font-weight: 600;
-        }
+        // select {
+        //     width: 100%;
+        //     text-align: left;
+        //     text-align-last: center;
+        //     padding: 5px;
+        //     background-color: #6DCFF6;
+        //     border: none;
+        //     border-radius: 6px;
+        //     font-size: 18px;
+        //     font-weight: 600;
+        // }
 
-        &__item {
-            background-color: #fff;
-            margin-top: 10px;
-            min-height: 190px;
-            border-radius: 6px;
-            padding: 10px;
+        // &__item {
+        //     background-color: #fff;
+        //     margin-top: 10px;
+        //     min-height: 190px;
+        //     border-radius: 6px;
+        //     padding: 10px;
 
-            .scrollbar {
-                float: left;
-                height: 150px;
-                width: 100%;
-                overflow-y: scroll;
-            }
+        //     .scrollbar {
+        //         float: left;
+        //         height: 150px;
+        //         width: 100%;
+        //         overflow-y: scroll;
+        //     }
 
-            .force-overflow {
-                min-height: 320px;
-            }
-        }
+        //     .force-overflow {
+        //         min-height: 320px;
+        //     }
+        // }
 
-        &__sub {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
+        // &__sub {
+        //     display: flex;
+        //     flex-wrap: wrap;
+        //     margin-bottom: 10px;
 
-            .address {
-                width: 50%;
-            }
+        //     .address {
+        //         width: 50%;
+        //     }
 
-            .icon__call,
-            .icon__time {
-                width: 24%;
-                padding-top: 22px;
-                position: relative;
-            }
+        //     .icon__call,
+        //     .icon__time {
+        //         width: 24%;
+        //         padding-top: 22px;
+        //         position: relative;
+        //     }
 
-            .icon__call {
-                &::before {
-                    background: url(https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Home/commit_1_0_0/images/call.jpg) center 0 no-repeat;
-                    background-size: 100%;
-                    position: absolute;
-                    top: 0px;
-                    left: 10px;
-                    display: block;
-                    content: "";
-                    width: 23px;
-                    height: 23px;
-                }
-            }
+        //     .icon__call {
+        //         &::before {
+        //             background: url(https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Home/commit_1_0_0/images/call.jpg) center 0 no-repeat;
+        //             background-size: 100%;
+        //             position: absolute;
+        //             top: 0px;
+        //             left: 10px;
+        //             display: block;
+        //             content: "";
+        //             width: 23px;
+        //             height: 23px;
+        //         }
+        //     }
 
-            .icon__time {
-                &::before {
-                    background: url(https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Home/commit_1_0_0/images/lich.jpg) center 0 no-repeat;
-                    background-size: 100%;
-                    position: absolute;
-                    top: 0px;
-                    left: 18px;
-                    display: block;
-                    content: "";
-                    width: 16px;
-                    height: 25px;
-                }
-            }
-        }
+        //     .icon__time {
+        //         &::before {
+        //             background: url(https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Home/commit_1_0_0/images/lich.jpg) center 0 no-repeat;
+        //             background-size: 100%;
+        //             position: absolute;
+        //             top: 0px;
+        //             left: 18px;
+        //             display: block;
+        //             content: "";
+        //             width: 16px;
+        //             height: 25px;
+        //         }
+        //     }
+        // }
 
         &__form {
             padding: 5px 0;

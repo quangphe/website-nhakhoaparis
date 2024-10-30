@@ -8,19 +8,19 @@
         box-shadow: 0 1px 25px rgb(0 0 0 / 10%);
         background: rgba(255, 255, 255, .9);
 
-        .header_6_0_0__boxTop {
+        .header_pr_2_0_0__boxTop {
             display: none;
         }
 
-        .header_6_0_0__box1 {
+        .header_pr_2_0_0__box1 {
             display: none;
         }
 
-        .header_6_0_0__box2 {
+        .header_pr_2_0_0__box2 {
             background: none;
         }
 
-        .header_6_0_0__box2__logosb {
+        .header_pr_2_0_0__box2__logosb {
             display: block;
         }
     }
@@ -42,7 +42,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 5px 0;
+        padding: 10px 0;
     }
 
     &__box1Left,
@@ -53,7 +53,7 @@
     }
 
     &__box1Logo {
-        width: 110px;
+        width: 140px;
         position: relative;
         margin: 0;
 
@@ -64,45 +64,32 @@
         }
     }
 
-    &__box1Call {
-        margin-left: 25px;
-        text-align: center;
-        position: relative;
-
-        ul {
-            list-style: none;
-
-            &::before {
-                background: url(https://nhakhoaparis.vn/wp-content/themes/ParisBrand2024/Module/Header/header_6_0_0/images/icon2.jpg) 0 center no-repeat;
-                content: "";
-                position: absolute;
-                top: 20px;
-                left: 5px;
-                width: 30px;
-                height: 30px;
-                background-size: 100%;
-            }
-
-            li {
-                color: #000;
-                font-size: 13px;
-            }
-        }
-    }
-
-    &__box1Regtv {
-        font-size: 13px;
-        display: block;
-        color: #fff;
-        background: #0056A4;
-        text-align: center;
-        padding: 3px 20px;
-        border-radius: 50px;
-        margin: 0 15px;
-    }
-
     &__iconMid {
         display: none;
+    }
+
+    &__box1SearchPC {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+
+        svg {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+        }
+
+        input {
+            border: none;
+            background-color: #EFEFEF;
+            border-radius: 20px;
+            padding: 8px 10px 8px 38px;
+            margin-right: 8px;
+            width: 70%;
+        }
     }
 
     &__box1Button {
@@ -113,13 +100,49 @@
         border-radius: 100%;
         padding: 8px;
         border: none;
-        display: flex;
+        // display: flex;
         align-items: center;
         justify-content: center;
+        display: none;
 
         img {
             width: 15px;
             height: 15px;
+        }
+    }
+
+    &__btn {
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 10px;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: all 0.3s linear;
+
+        span {
+            color: #fff;
+            font-size: 1rem;
+            padding-left: 20px;
+        }
+
+        &.btnHotline {
+            background-color: #10B1E7;
+
+            &:hover {
+                background-color: #5bcaef;
+                transition: all 0.3s linear;
+            }
+        }
+
+        &.btnBooking {
+            background-color: #2A52BE;
+
+            &:hover {
+                background-color: #082677;
+                transition: all 0.3s linear;
+            }
         }
     }
 
@@ -147,7 +170,7 @@
             &:hover {
                 border-top: 3px solid #0056A2;
 
-                .header_6_0_0__box2__menuSubBox {
+                .header_pr_2_0_0__box2__menuSubBox {
                     display: block;
                     animation: opac 0.4s;
                 }
@@ -254,10 +277,24 @@
             gap: 18px;
         }
 
-        &__box1Address,
-        &__box1Regtv {
+        &__box1SearchPC {
             display: none;
         }
+
+        &__box1Button {
+            display: flex;
+        }
+
+        &__btn {
+            &.btnBooking {
+                display: none;
+            }
+        }
+
+        // &__box1Address,
+        // &__box1Regtv {
+        //     display: none;
+        // }
 
         &__iconMid {
             display: block;
@@ -306,7 +343,7 @@
                 display: block;
 
                 &.active {
-                    .header_6_0_0__box2__menuSubBox {
+                    .header_pr_2_0_0__box2__menuSubBox {
                         display: block !important;
                     }
                 }
@@ -401,11 +438,11 @@
         box-shadow: 0 1px 25px rgba(0, 0, 0, .1);
 
         &.menufix {
-            .header_6_0_0__box1 {
+            .header_pr_2_0_0__box1 {
                 display: block;
             }
 
-            .header_6_0_0__box2 {
+            .header_pr_2_0_0__box2 {
                 background: #fff;
             }
         }
@@ -469,6 +506,18 @@
 
         &__iconMid {
             left: 10px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__btn {
+            padding: 8px;
+
+            &.btnHotline {
+                span {
+                    display: none;
+                }
+            }
         }
     }
 }

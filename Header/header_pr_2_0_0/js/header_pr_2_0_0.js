@@ -11,7 +11,7 @@ document.getElementById("menu-bg").addEventListener("click", () => {
 // Xử lý scroll menu
 window.onscroll = function(){ menuFix() };
 
-var header = document.getElementById("header_6_0_0__main");
+var header = document.getElementById("header_pr_2_0_0__main");
 var sticky = header.offsetTop;
 
 function menuFix() {
@@ -28,9 +28,9 @@ let headerData = [];
 // Render nội dung của mỗi item
 const renderMenuItem = (item) => {
     let html = `
-        <div class="header_6_0_0__box2__title arr">${item.title}</div>
+        <div class="header_pr_2_0_0__box2__title arr">${item.title}</div>
         <i class="icon-plus menu-icon" id="icon-plus">+</i>
-        <div class="header_6_0_0__box2__menuSubBox">
+        <div class="header_pr_2_0_0__box2__menuSubBox">
             <div class="box">
                 <div class="row">
                     ${colHeader(item.group)}
@@ -42,8 +42,8 @@ const renderMenuItem = (item) => {
 };
 
 // Thêm sự kiện hover/click vào từng item trong danh sách ul
-document.querySelectorAll('.header_6_0_0__box2__menuSub').forEach((item, index) => {
-    // let menuSubBox = item.querySelector('.header_6_0_0__box2__menuSubBox');
+document.querySelectorAll('.header_pr_2_0_0__box2__menuSub').forEach((item, index) => {
+    // let menuSubBox = item.querySelector('.header_pr_2_0_0__box2__menuSubBox');
 
     if (screen.width > 1024) {
         // Xử lý sự kiện khi di chuột vào mục
@@ -83,7 +83,9 @@ document.querySelectorAll('.header_6_0_0__box2__menuSub').forEach((item, index) 
 const getHeader = async () => {
     const response = await fetch(`https://nhakhoaparis.vn/wp-json/api/v1/menu/`);
     const data = await response.json();
+    console.log(data);
     const headerJSON = data.id_header_6_0_0_sub1;
+    // console.log(headerJSON);
     headerData = headerJSON.map((item) => {
         const titleMain = item.title.split("\r\n");
         const itemCol = item.col1.split("\r\n\r\n");
