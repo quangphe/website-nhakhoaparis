@@ -1,0 +1,149 @@
+.screen1 {
+    background-size: 1920px;
+    position: relative;
+
+    &__item {
+        position: relative;
+        top: 0;
+
+        img {
+            display: block;
+            inset: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.screen2 {
+    margin: 30px 0;
+
+    &__box {
+        display: flex;
+        align-items: center;
+    }
+
+    &__boxLeft,
+    &__boxRight {
+        width: 50%;
+    }
+
+    &__pic {
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__boxRight {
+        margin-left: 20px;
+    }
+
+    &__title {
+        color: #2A52BE;
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+
+    &__desc {
+        text-align: justify;
+        line-height: 30px;
+        font-size: 1rem;
+        margin: 16px 0 30px;
+    }
+
+    &__btn {
+        background-color: #10B1E7;
+        color: #fff;
+        font-size: 1.2rem;
+        border-radius: 20px;
+        padding: 10px 20px;
+        transition: all .3s linear;
+
+        &:hover {
+            background-color: #3ec0eb;
+            transition: all .3s linear;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &__desc {
+            line-height: 26px;
+            margin: 16px 0px 22px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__box {
+            flex-wrap: wrap;
+        }
+
+        &__boxLeft,
+        &__boxRight {
+            width: 100%;
+        }
+
+        &__boxRight {
+            margin-left: 0px;
+            margin-top: 20px;
+        }
+
+        &__desc {
+            margin: 10px 0px 22px;
+        }
+    }
+}
+
+.screen3 {
+    margin: 40px 0;
+
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        width: 32%;
+        border: 1px solid #e6e6e6;
+        border-radius: 12px;
+        margin: 0 5px 10px;
+        border-bottom: 3px solid #d8d8d8;
+    }
+
+    &__pic {
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__boxText {
+        padding: 20px;
+    }
+
+    &__title {
+        color: #2A52BE;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    &__desc {
+        text-align: justify;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 912px) {
+        &__item {
+            width: 48%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__item {
+            width: 100%;
+        }
+    }
+}
