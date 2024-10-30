@@ -13,16 +13,47 @@
     }
 
     &__box {
+        position: relative;
+        overflow: hidden;
+        height: 246px;
+        margin: 30px 0;
+
+        &:hover .system_pr_2_0_0__preWrapper {
+            animation-play-state: paused;
+        }
+
+        &:hover .system_pr_2_0_0__wrapper {
+            animation-play-state: paused;
+        }
+    }
+
+    &__preWrapper {
+        position: relative;
+        width: 100%;
+        transform: translateX(0%);
+        animation: scroll1 13s linear infinite;
+        will-change: transform;
+    }
+
+    &__wrapper {
+        position: absolute;
+        white-space: nowrap;
+        transform: translateX(0%) translateZ(0);
+        animation: scroll2 13s linear infinite;
+        will-change: transform;
         display: flex;
-        margin-top: 20px;
     }
 
     &__item {
         width: 33%;
-        margin: 0 8px;
+        margin: 0 0 0 30px;
         border-bottom: 2px solid #d8d8d8;
         border-radius: 0 0 10px 10px;
         cursor: pointer;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
     }
 
     &__pic {
@@ -39,7 +70,7 @@
         color: var(--primary-color);
         font-weight: 600;
         font-size: 1.1rem;
-        padding: 20px 0;
+        padding: 20px 10px;
         // transition: all .3s linear;
 
         // &:hover {
@@ -63,7 +94,34 @@
 
         &__item {
             width: 100%;
-            margin: 0 0 15px 0;
         }
+
+        &__preWrapper {
+            animation: scroll1 33s linear infinite;
+        }
+
+        &__wrapper {
+            animation: scroll2 33s linear infinite;
+        }
+    }
+}
+
+@keyframes scroll1 {
+    0% {
+        transform: translateX(-0%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(0%) translateZ(0);
+    }
+
+    100% {
+        transform: translateX(-100%) translateZ(0);
     }
 }

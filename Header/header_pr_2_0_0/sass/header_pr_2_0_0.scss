@@ -8,19 +8,19 @@
         box-shadow: 0 1px 25px rgb(0 0 0 / 10%);
         background: rgba(255, 255, 255, .9);
 
-        .header_6_0_0__boxTop {
+        .header_pr_2_0_0__boxTop {
             display: none;
         }
 
-        .header_6_0_0__box1 {
+        .header_pr_2_0_0__box1 {
             display: none;
         }
 
-        .header_6_0_0__box2 {
+        .header_pr_2_0_0__box2 {
             background: none;
         }
 
-        .header_6_0_0__box2__logosb {
+        .header_pr_2_0_0__box2__logosb {
             display: block;
         }
     }
@@ -170,7 +170,7 @@
             &:hover {
                 border-top: 3px solid #0056A2;
 
-                .header_6_0_0__box2__menuSubBox {
+                .header_pr_2_0_0__box2__menuSubBox {
                     display: block;
                     animation: opac 0.4s;
                 }
@@ -343,7 +343,7 @@
                 display: block;
 
                 &.active {
-                    .header_6_0_0__box2__menuSubBox {
+                    .header_pr_2_0_0__box2__menuSubBox {
                         display: block !important;
                     }
                 }
@@ -438,11 +438,11 @@
         box-shadow: 0 1px 25px rgba(0, 0, 0, .1);
 
         &.menufix {
-            .header_6_0_0__box1 {
+            .header_pr_2_0_0__box1 {
                 display: block;
             }
 
-            .header_6_0_0__box2 {
+            .header_pr_2_0_0__box2 {
                 background: #fff;
             }
         }
