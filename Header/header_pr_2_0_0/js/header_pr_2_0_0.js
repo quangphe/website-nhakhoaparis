@@ -9,18 +9,18 @@ document.getElementById("menu-bg").addEventListener("click", () => {
 });
 
 // Xử lý scroll menu
-window.onscroll = function(){ menuFix() };
+// window.onscroll = function(){ menuFix() };
 
-var header = document.getElementById("header_pr_2_0_0__main");
-var sticky = header.offsetTop;
+// var header = document.getElementById("header_pr_2_0_0__main");
+// var sticky = header.offsetTop;
 
-function menuFix() {
-    if (window.pageYOffset > sticky) {
-        header.classList.add("menufix");
-    } else {
-        header.classList.remove("menufix");
-    }
-}
+// function menuFix() {
+//     if (window.pageYOffset > sticky) {
+//         header.classList.add("menufix");
+//     } else {
+//         header.classList.remove("menufix");
+//     }
+// }
 
 // Lưu dữ liệu vào biến headerData
 let headerData = [];

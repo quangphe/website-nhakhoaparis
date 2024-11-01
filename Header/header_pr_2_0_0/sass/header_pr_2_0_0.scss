@@ -156,6 +156,7 @@
 
         &__menu {
             display: flex;
+            justify-content: space-between;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -165,7 +166,7 @@
             display: flex;
             align-items: center;
             border-top: 3px solid transparent;
-            padding: 8px 12px;
+            padding: 8px 46px;
 
             &:hover {
                 border-top: 3px solid #0056A2;
