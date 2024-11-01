@@ -1,13 +1,1 @@
-@charset "UTF-8";
-:root {
-  --primary-color: #2A52BE;
-  /* Màu chính */
-  --secondary-color: #10B1E7;
-  /* Màu phụ */
-  --third-color: #E3F4FD;
-  /* Màu phụ 2 */
-  --accent-color: #F15856;
-  /* Màu nhấn mạnh */
-  --black-color: #000000;
-  /* Màu text */
-}/*# sourceMappingURL=colors.min.css.map */
+:root{--primary-color: #2A52BE;--secondary-color: #10B1E7;--third-color: #E3F4FD;--accent-color: #F15856;--black-color: #000000}/*# sourceMappingURL=colors.min.css.map */
