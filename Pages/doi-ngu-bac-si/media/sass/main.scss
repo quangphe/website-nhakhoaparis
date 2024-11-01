@@ -1,0 +1,240 @@
+.screen1 {
+    &__banner {
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
+
+.screen2 {
+    padding: 30px 0 0;
+
+    &__title {
+        color: #2A52BE;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+    &__subText {
+        text-align: center;
+        font-size: 1.1rem;
+        margin: 20px 0;
+    }
+
+    &__boxSearch {
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+        padding: 20px 10px 10px 10px;
+        border: 3px solid #E3F4FD;
+        border-radius: 10px;
+    }
+
+    &__itemSearch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    &__textSearch {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #2A52BE;
+        width: 10%;
+    }
+
+    &__select {
+        background-color: #E3F4FD;
+        width: 100%;
+        padding: 10px;
+        margin-left: 20px;
+        border: none;
+        border-radius: 20px;
+        width: 30%;
+        display: block;
+    }
+
+    &__result {
+        text-align: center;
+        font-size: 1rem;
+        margin: 30px 0;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    &__boxDoctor {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__itemDoctor {
+        display: flex;
+        width: 48%;
+        margin: 0 8px 20px 8px;
+        border-bottom: 3px solid #ececec;
+        border-radius: 20px;
+    }
+
+    &__picDoctor {
+        width: 35%;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__infoDoctor {
+        flex: 1;
+        margin-left: 15px;
+    }
+
+    &__name {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #2A52BE;
+    }
+
+    &__listInfo {
+        margin: 8px 0;
+    }
+
+    &__itemInfo {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    &__boxContact {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 15px;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: all 0.3s linear;
+        color: #fff;
+        font-size: 1rem;
+
+        &.btnHotline {
+            background-color: #10B1E7;
+
+            &:hover {
+                background-color: #5bcaef;
+                transition: all 0.3s linear;
+            }
+        }
+
+        &.btnBooking {
+            background-color: #2A52BE;
+
+            &:hover {
+                background-color: #082677;
+                transition: all 0.3s linear;
+            }
+        }
+    }
+
+    @media (max-width: 1280px) {
+        &__boxSearch {
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        &__textSearch {
+            width: 20%;
+        }
+
+        &__select {
+            width: 45%;
+        }
+    }
+
+    @media (max-width: 912px) {
+        &__itemDoctor {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__boxSearch {
+            width: 100%;
+        }
+
+        &__select {
+            width: 60%;
+        }
+
+        &__itemDoctor {
+            flex-direction: column;
+        }
+
+        &__picDoctor {
+            width: 55%;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        &__name {
+            text-align: center;
+        }
+
+        &__boxContact {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 375px) {
+        &__title {
+            font-size: 1.6rem;
+        }
+
+        &__textSearch {
+            width: 26%;
+        }
+    }
+
+    @media (max-width: 280px) {
+        &__btn {
+            font-size: 0.9rem;
+            padding: 5px 8px;
+        }
+    }
+}
+
+.screen3 {
+    padding: 0 0 30px;
+
+    &__title {
+        color: #2A52BE;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin: 20px 0;
+    }
+
+    &__desc {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    @media (max-width: 320px) {
+        &__title {
+            font-size: 1.2rem;
+        }
+    }
+}
