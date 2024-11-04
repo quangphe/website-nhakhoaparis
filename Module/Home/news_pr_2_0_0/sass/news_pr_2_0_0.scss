@@ -14,7 +14,7 @@
     }
 
     &__boxLeft {
-        width: 40%;
+        width: 55%;
     }
 
     &__pic,
@@ -36,7 +36,7 @@
 
     &__picChild {
         width: 50%;
-        height: 260px;
+        height: 160px;
         object-fit: cover;
     }
 
@@ -49,6 +49,12 @@
         font-size: 1rem;
         font-weight: 600;
         margin: 10px 0 5px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 25px;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
 
         &:hover {
             color: var(--primary-color);
@@ -78,28 +84,19 @@
 
     @media (max-width: 1024px) {
         &__picChild {
-            height: 214px;
+            height: 132px;
         }
     }
 
     @media (max-width: 912px) {
         &__picChild {
-            height: 168px;
-        }
-
-        &__titleChild {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 25px;
-            -webkit-line-clamp: 3;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
+            height: 104px;
         }
     }
 
     @media (max-width: 768px) {
         &__picChild {
-            height: 158px;
+            height: 98px;
         }
     }
 
@@ -115,6 +112,11 @@
 
         &__boxRight {
             padding-left: 0;
+        }
+
+        &__titleChild {
+            margin: 0 0 5px 0;
+            -webkit-line-clamp: 2;
         }
 
         &__item {
