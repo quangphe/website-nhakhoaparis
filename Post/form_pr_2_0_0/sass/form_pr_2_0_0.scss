@@ -1,0 +1,63 @@
+.form_pr_2_0_0 {
+    &__boxFormMain {
+        background-color: #2A52BE;
+        padding: 30px 20px;
+        margin-top: 15px;
+        border-radius: 12px;
+    }
+
+    &__title {
+        text-align: center;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    &__form {
+
+        input,
+        select {
+            padding: 8px 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            background: #fff;
+            font-size: 14px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__reg {
+        input {
+            background-color: #10B1E7;
+            color: #fff;
+            cursor: pointer;
+            transition: all .3s linear;
+
+            &:hover {
+                background-color: #39c2f0;
+                transition: all .3s linear;
+            }
+        }
+    }
+
+    @media (max-width: 912px) {
+        &__title {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__title {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 320px) {
+        &__title {
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.postText_pr_2_0_0 {
+    &__title {
+        color: #2A52BE;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin: 20px 0;
+    }
+
+    &__desc {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    &__pic {
+        width: 70%;
+        display: block;
+        margin: 20px auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    @media (max-width: 320px) {
+        &__title {
+            font-size: 1.2rem;
+        }
+    }
+}

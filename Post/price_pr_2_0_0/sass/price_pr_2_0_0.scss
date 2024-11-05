@@ -1,0 +1,88 @@
+.price_pr_2_0_0 {
+    &__item {
+        width: 100%;
+        border: 1px solid #e6e6e6;
+        border-radius: 12px;
+        border-bottom: 3px solid #d8d8d8;
+    }
+
+    &__boxTop {
+        background-color: #E3F4FD;
+        border-radius: 12px;
+        padding: 20px 20px 110px;
+    }
+
+    &__titleChild {
+        color: var(--primary-color);
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    &__pic {
+        margin-top: -100px;
+        padding: 0 20px;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+    }
+
+    &__boxPrice {
+        padding: 20px 20px 10px 20px;
+    }
+
+    &__itemPrice {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+    }
+
+    &__nameService,
+    &__price {
+        font-size: 0.9rem;
+        color: var(--black-color);
+    }
+
+    &__boxButton {
+        padding: 0 20px 20px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__btn {
+        border: none;
+        border-radius: 20px;
+        color: #fff;
+        text-align: center;
+        font-size: 1rem;
+        padding: 5px 15px;
+        width: 48%;
+        cursor: pointer;
+
+        &.btnMore {
+            background-color: #10B1E7;
+            transition: all 0.3s linear;
+
+            &:hover {
+                background-color: #5bcaef;
+                transition: all 0.3s linear;
+            }
+        }
+
+        &.btnRegist {
+            background-color: #2A52BE;
+            transition: all 0.3s linear;
+
+            &:hover {
+                background-color: #082677;
+                transition: all 0.3s linear;
+            }
+        }
+    }
+}
