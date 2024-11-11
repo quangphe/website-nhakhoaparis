@@ -56,7 +56,7 @@
                             and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting
                             industry.
                         </div>
-                        <div class="screen2__btn">
+                        <div class="screen2__btn" onclick="renderQuestion('0')">
                             Kiểm tra ngay
                         </div>
                     </div>
@@ -65,7 +65,7 @@
         </div>
     </section>
 
-    <section class="screen3 load">
+    <section class="screen3 load" style="display: none;">
         <div class="container">
             <div class="screen3__box">
                 <div class="screen3__title">
@@ -74,28 +74,32 @@
                 <div class="screen3__boxChild">
                     <div class="screen3__headTop">
                         <p>Câu 1/10</p>
-                        <div class="screen3__line"></div>
+                        <div class="screen3__line">
+                            <div class="screen3__front"></div>
+                        </div>
                     </div>
                     <div class="screen3__boxQuestion">
                         <div class="screen3__titleQuestion">
                             Câu 1: Lorem Ipsum is simply dummy text
                         </div>
-                        <div class="screen3__answer">
-                            Lựa chọn 1
+                        <div class="screen3__answers">
+                            <div class="screen3__answer">
+                                Lựa chọn 1
+                            </div>
+                            <div class="screen3__answer">
+                                Lựa chọn 2
+                            </div>
                         </div>
-                        <div class="screen3__answer">
-                            Lựa chọn 2
-                        </div>
-                        <div class="screen3__btn">
+                        <a href="#" target="_blank" class="screen3__btn">
                             Tìm hiểu ngay
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="screen4 load">
+    <section class="screen4 load" style="display: none;">
         <div class="container">
             <div class="screen4__box">
                 <div class="screen4__title">
@@ -105,32 +109,51 @@
                     Đăng ký thông tin để nhận kết quả
                 </div>
                 <div class="screen4__boxForm">
-                    <div class="screen4__item">
-                        <input type="text" placeholder="Họ và tên">
-                    </div>
-                    <div class="screen4__boxItem">
-                        <div class="screen4__item item1">
-                            <input type="text" placeholder="Số điện thoại">
+                    <form id="form-checking">
+                        <div style="display:none">
+                            <input name="email" type="textbox" value="">
+                            <input id="gclid_field" name="referred" value="">
+                            <input name="code_campaign" value="558803151">
+                            <input name="name_campaign" value="[Paris] Thương Hiệu Tư Vấn">
+                            <input name="first_link" value="">
+                            <input name="website" value="">
+                            <input name="location" value="">
                         </div>
-                        <div class="screen4__item item1">
-                            <input type="text" placeholder="Giới tính">
+                        <div class="screen4__item form-group">
+                            <input type="text" name="iname" placeholder="Họ và tên">
+                            <div class="form-message"></div>
                         </div>
-                    </div>
-                    <div class="screen4__item">
-                        <input type="text" placeholder="Email (không bắt buộc)">
-                    </div>
-                    <div class="screen4__btn">
-                        Nhận kết quả
-                    </div>
-                    <a href="#" class="screen4__back">
+                        <div class="screen4__boxItem">
+                            <div class="screen4__item item1 form-group">
+                                <input type="text" name="imob" placeholder="Số điện thoại">
+                                <div class="form-message"></div>
+                            </div>
+                            <div class="screen4__item item1 form-group">
+                                <input type="text" name="gender" placeholder="Giới tính">
+                                <div class="form-message"></div>
+                            </div>
+                        </div>
+                        <div class="screen4__item form-group">
+                            <input type="text" name="iemail" placeholder="Email (không bắt buộc)">
+                            <div class="form-message"></div>
+                        </div>
+                        <div class="form-group" style="display: none;">
+                            <input type="text" name="itext" placeholder="Ghi chú">
+                            <div class="form-message"></div>
+                        </div>
+                        <div class="screen4__btn">
+                            <input type="submit" value="Nhận kết quả">
+                        </div>
+                    </form>
+                    <div class="screen4__back" onclick="renderQuestion('0')">
                         Trả lời lại
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="screen5 load">
+    <!-- <section class="screen5 load" style="display: none;">
         <div class="container">
             <div class="screen5__box">
                 <div class="screen5__title">
@@ -249,26 +272,64 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section class="screen6 load">
+    <section class="screen6 load" style="display: none;">
         <div class="container">
             <div class="screen6__box">
-                <div class="screen6__title">
-                    Kiểm tra nguy cơ răng miệng của Quý Khách
+                <div class="screen6__main" style="display: none;">
+                    <div class="screen5__title">
+                        Kiểm tra nguy cơ răng miệng của Quý Khách
+                    </div>
+                    <div class="screen5__subTitle">
+                        Kết quả: <span>SỨC KHỎE RĂNG MIỆNG TỐT</span>
+                    </div>
+                    <div class="screen5__text">
+                        Chúc mừng! Răng miệng của bạn đang trong tình trạng tốt và khỏe mạnh. Để giữ vững kết quả này, hãy
+                        duy trì những thói quen chăm sóc hàng ngày.
+                    </div>
+                    <div class="screen5__note">
+                        Đừng bỏ lỡ các bí quyết dưới đây để nụ cười của bạn luôn rạng ngời nhé!
+                    </div>
+                    <div class="screen5__icon">
+                        <img width="218" height="218" src="media/images/icon-tot.png" alt="">
+                    </div>
                 </div>
-                <div class="screen6__subTitle">
-                    Tình trạng răng miệng của bạn: <span>TRUNG BÌNH</span>
+                <div class="screen6__main">
+                    <div class="screen6__title">
+                        Kiểm tra nguy cơ răng miệng của Quý Khách
+                    </div>
+                    <div class="screen6__subTitle">
+                        Tình trạng răng miệng của bạn: <span>TRUNG BÌNH</span>
+                    </div>
+                    <div class="screen6__text">
+                        Cần được kiểm tra ngay. Việc này sẽ giúp phát hiện và ngăn ngừa những vấn đề tiềm ẩn, bảo vệ răng
+                        miệng của bạn. Hãy đến nha khoa sớm nhất có thể để được tư vấn kỹ hơn!
+                    </div>
+                    <div class="screen6__note">
+                        Đặt lịch hẹn ngay để bảo vệ sức khỏe răng miệng của bạn!
+                    </div>
+                    <div class="screen6__icon">
+                        <img width="218" height="218" src="media/images/icon-trungbinh.png" alt="">
+                    </div>
                 </div>
-                <div class="screen6__text">
-                    Cần được kiểm tra ngay. Việc này sẽ giúp phát hiện và ngăn ngừa những vấn đề tiềm ẩn, bảo vệ răng
-                    miệng của bạn. Hãy đến nha khoa sớm nhất có thể để được tư vấn kỹ hơn!
-                </div>
-                <div class="screen6__note">
-                    Đặt lịch hẹn ngay để bảo vệ sức khỏe răng miệng của bạn!
-                </div>
-                <div class="screen6__icon">
-                    <img width="218" height="218" src="media/images/icon-trungbinh.png" alt="">
+                <div class="screen6__main" style="display: none;">
+                    <div class="screen7__title">
+                        Kiểm tra nguy cơ răng miệng của Quý Khách
+                    </div>
+                    <div class="screen7__subTitle">
+                        Tình trạng răng miệng của bạn: <span>NGHIÊM TRỌNG</span>
+                    </div>
+                    <div class="screen7__text">
+                        Cần được điều trị ngay lập tức. Đừng chờ đợi thêm! Khám và điều trị kịp thời sẽ giúp răng miệng của
+                        bạn tránh những biến chứng nguy hiểm hơn trong tương lai.
+                    </div>
+                    <div class="screen7__note">
+                        Liên hệ với nha khoa ngay để được tư vấn và điều trị kịp thời!
+                    </div>
+                    <div class="screen7__icon">
+                        <img width="218" height="218" src="media/images/icon-nghiemtrong.png" alt="">
+                    </div>
                 </div>
                 <select name="" id="select-box" class="screen6__select">
                     <option value="">
@@ -394,7 +455,7 @@
         </div>
     </section>
 
-    <section class="screen7 load">
+    <!-- <section class="screen7 load" style="display: none;">
         <div class="container">
             <div class="screen7__box">
                 <div class="screen7__title">
@@ -535,8 +596,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </body>
+
+<script type="text/javascript" src="https://nhakhoaparis.vn/css/lib/js_v2.min.js"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -562,6 +625,122 @@
         // Chuyển slide sau mỗi 5 giây
         setInterval(nextSlide, 5000);
     });
+</script>
+
+<script>
+    const dataQuestion = [
+        {
+            question: 'question 1',
+            answers: [
+                {
+                    answer: 'answer 1',
+                    nextQuestion: 1
+                },
+                {
+                    answer: 'answer 2',
+                    nextQuestion: 1
+                }
+            ],
+            link: '#0',
+        },
+        {
+            question: 'question 2',
+            answers: [
+                {
+                    answer: 'answer 1',
+                    nextQuestion: 2
+                },
+                {
+                    answer: 'answer 2',
+                    nextQuestion: 2
+                }
+            ],
+            link: '#1',
+        },
+        {
+            question: 'question 3',
+            answers: [
+                {
+                    answer: 'answer 1',
+                    nextQuestion: ''
+                },
+                {
+                    answer: 'answer 2',
+                    nextQuestion: ''
+                }
+            ],
+            link: '#2',
+        },
+    ];
+
+    let index = 0;
+
+    const renderQuestion = (id) => {
+        const screen2 = document.querySelector('.screen2');
+        const screen3 = document.querySelector('.screen3');
+        const screen4 = document.querySelector('.screen4');
+        const screen3Count = document.querySelector('.screen3__headTop p');
+        const screen3Front = document.querySelector('.screen3__front');
+        const screen3Title = document.querySelector('.screen3__titleQuestion');
+        const screen3Answer = document.querySelector('.screen3__answers');
+        const screen3Link = document.querySelector('.screen3__btn');
+        const data = dataQuestion[id];
+        if (id) {
+            if (id === '0') index = 0;
+            index += 1;
+            screen2.style.display = 'none';
+            screen3.style.display = 'block';
+            screen4.style.display = 'none';
+            screen3Count.innerHTML = `${index}/10`;
+            screen3Front.style.width = `${index * 10}%`;
+            screen3Title.innerHTML = data.question;
+            const answer = data.answers.map(item => `<div class="screen3__answer" onclick="renderQuestion('${item.nextQuestion}')">${item.answer}</div>`);
+            screen3Answer.innerHTML = answer.join('');
+            screen3Link.setAttribute('href', data.link);
+        } else {
+            screen3.style.display = 'none';
+            screen4.style.display = 'block';
+        }
+    }
+
+    document.querySelector('#form-checking input[name="first_link"]').value = document.URL;
+    document.querySelector('#form-checking input[name="website"]').value = document.referrer;
+    getLocation().then((data) => {
+        document.querySelector('#form-checking input[name="location"]').value = data.city;
+    });
+    Validator({
+        form: "#form-checking",
+        errorSelector: ".form-message",
+        formGroupSelector: ".form-group",
+        rules: [
+            Validator.isRequired('input[name="iname"]'),
+            Validator.isRequired('input[name="imob"]'),
+            Validator.isRequired('input[name="gender"]'),
+            Validator.isMobile('input[name="imob"]'),
+            Validator.addInput('#form-checking input[name="itext"]', () => {
+                return 'Giới tính: ' + document.querySelector('#form-checking input[name="gender"]').value;
+            }),
+        ],
+        onSubmit: function(data) {
+            if(document.querySelector('#form-checking input[name="email"]').value === ''){
+                console.log(data);
+                document.querySelector('#form-checking input[type="submit"]').setAttribute("disabled", "");
+                document.querySelector('#form-checking input[type="submit"]').classList.add('seeding');
+                document.querySelector('#form-checking input[type="submit"]').value = "Đang gửi thông tin...";
+                setTimeout(() => {
+                    document.querySelector('#form-checking input[type="submit"]').removeAttribute("disabled");
+                    document.querySelector('#form-checking input[type="submit"]').classList.remove('seeding');
+                    document.querySelector('#form-checking input[type="submit"]').value = "Nhận kết quả";
+                }, 3000)
+                // sendForm(data, "/dang-ky-thanh-cong");
+                document.querySelector('#form-checking').reset();
+                const screen6 = document.querySelector('.screen6');
+                const screen4 = document.querySelector('.screen4');
+                screen6.style.display = 'block';
+                screen4.style.display = 'none';
+            }
+        }
+  });
 </script>
 
 </html>
