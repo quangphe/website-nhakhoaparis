@@ -599,7 +599,7 @@
     </section> -->
 </body>
 
-<script type="text/javascript" src="https://nhakhoaparis.vn/css/lib/js_v2.min.js"></script>
+<script type="text/javascript" src="https://nhakhoaparis.vn/css/lib/js_v2.min.js?ver=1"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -720,6 +720,9 @@
             Validator.addInput('#form-checking input[name="itext"]', () => {
                 return 'Giới tính: ' + document.querySelector('#form-checking input[name="gender"]').value;
             }),
+            Validator.addInput('#form-checking input[name="iemail"]', () => {
+                return document.querySelector('#form-checking input[name="iemail"]').value === '' ? 'no@email.com' : document.querySelector('#form-checking input[name="iemail"]').value;
+            }),
         ],
         onSubmit: function(data) {
             if(document.querySelector('#form-checking input[name="email"]').value === ''){
@@ -732,7 +735,7 @@
                     document.querySelector('#form-checking input[type="submit"]').classList.remove('seeding');
                     document.querySelector('#form-checking input[type="submit"]').value = "Nhận kết quả";
                 }, 3000)
-                // sendForm(data, "/dang-ky-thanh-cong");
+                sendForm(data, "");
                 document.querySelector('#form-checking').reset();
                 const screen6 = document.querySelector('.screen6');
                 const screen4 = document.querySelector('.screen4');
