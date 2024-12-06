@@ -144,7 +144,8 @@
     &__maps {
         margin-top: 12px;
 
-        img {
+        img,
+        iframe {
             width: 100%;
             height: 340px;
             object-fit: cover;
