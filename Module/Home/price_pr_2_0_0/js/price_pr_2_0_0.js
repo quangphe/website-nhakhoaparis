@@ -1,9 +1,82 @@
-function sliderTab() {
-    // Slider mobile
+// Hàm hiển thị dữ liệu
+function displayPriceData(data, containerSelector, group) {
+    const priceBox = document.querySelector(containerSelector);
+    priceBox.innerHTML = ''; // Xóa nội dung cũ
+        
+        // Hien thi 1 san pham
+        if (group) {
+            for (let i = 0 ; i < data.length; i++) {
+                if (i == 0) {
+                    renderProduct(data[0], priceBox);
+                }
+                renderItem(data[i], priceBox);
+            }
+        }
+
+        if (group == undefined) {
+            // Hien thi tat ca san pham THEO cate
+            
+            for (const key in data) {
+                let count = 0;
+                // console.log(data[key]);
+                for( const item in data[key]) { 
+                    let x = data[key][item];
+
+                    // lấy nhóm sản phẩm đầu tiên
+                    for (let i = 0 ; i < x.length; i++) {
+                        if (i == 0) {
+                            renderProduct(x[i], priceBox, count);
+                        }
+                        
+                        // Render Product Item
+                        renderItem(x[i], priceBox, count); 
+                    }
+                    // console.log(x);
+
+                    // Tăng count Product group
+                    count= count + 1;
+                }
+           }
+
+           // render mobile
+            sliderTab(containerSelector);
+        }
+}
+
+
+function renderProduct(service, priceBox, count) {
+    // Tạo template
+    const template = document.getElementById('my-template').content;
+    const clone = document.importNode(template, true);
+
+     // Chèn dữ liệu từ object vào template
+     clone.querySelector('.price_pr_2_0_0__titleChild').textContent = service.name;
+     clone.querySelector('.price_pr_2_0_0__pic img').src = service.image;
+     clone.querySelector('.price_pr_2_0_0__boxPrice').classList.add('item_' + count);
+     priceBox.appendChild(clone);
+}
+
+// Hàm hiển thị nhóm sản phẩm
+function renderItem(service, priceBox, count) {
+    // Tạo template
+    const template = document.getElementById('my-template2').content;
+    const clone = document.importNode(template, true);
+
+     // Chèn dữ liệu từ object vào template
+     clone.querySelector('.price_pr_2_0_0__nameService').textContent = service.name;
+     clone.querySelector('.price_pr_2_0_0__price').textContent = service.price.toLocaleString();
+
+    priceBox.querySelector(`.price_pr_2_0_0__boxPrice.item_${count}`).appendChild(clone);
+    // priceBox.appendChild(clone);
+
+}
+
+// Slider Mobile
+function sliderTab(idDom) {
     let dots = [];
     if (window.innerWidth <= 767) {
-        const slider = document.querySelector('.price_pr_2_0_0__box');
-        const slideItems = document.querySelectorAll('.price_pr_2_0_0__item');
+        const slider = document.querySelector(idDom);
+        const slideItems = document.querySelectorAll(`${idDom} .price_pr_2_0_0__item`);
         let currentSlide = 0;
 
         function showSlide(index) {
@@ -92,4 +165,30 @@ function sliderTab() {
     }
 }
 
-sliderTab();
+// Call API
+const getData = async (cate, group) => {
+    let response;
+    if (group) {
+        response = await fetch(`https://scigroup.com.vn/app/api/store/?d=price-paris&cate=${cate}&group=${group}`);
+    } else {
+        response = await fetch(`https://scigroup.com.vn/app/api/store/?d=price-paris&cate=${cate}`);
+    }
+    const data = await response.json();
+    return data;
+};
+
+// Chạy chương trình
+const run = async (cate, idDom, group) => {
+    const data = await getData(cate, group);
+    // console.log(data);
+    displayPriceData(data, idDom, group);
+};
+
+// Gọi hàm chạy sản phẩm tiêu biểu [cate, id dom]
+run('like', '#price1');
+
+// Gọi hàm chạy sản phẩm theo cate
+run('Niềng Răng', '#price2');
+
+// Gọi hàm chạy sản phẩm tiêu biểu
+run('', '#price3', 'Niềng răng mắc cài kim loại');

@@ -64,6 +64,13 @@
         margin: 0 auto 10px;
         display: block;
         font-size: 0.9rem;
+        transition: all .3s linear;
+
+        &:hover {
+            background-color: #2A52BE;
+            color: #fff;
+            transition: all .3s linear;
+        }
     }
 
     @media (max-width: 1024px) {

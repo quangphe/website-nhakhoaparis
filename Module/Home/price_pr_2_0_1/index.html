@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>price_pr_2_0_1</title>
+    <link rel="stylesheet" href="https://huudinh.github.io/assets/sass/lib.min.css">
+    <link rel="stylesheet" href="../../../assets/colors.min.css">
+    <link rel="stylesheet" href="./sass/price_pr_2_0_1.min.css">
+    <script src="https://huudinh.github.io/assets/js/lib.min.js"></script>
+</head>
+
+<body>
+    <section class="price_pr_2_0_1 pricePost">
+        <div class="container">
+            <div class="price_pr_2_0_1__title" id="price_pr_2_0_1__title">
+                Trồng răng
+            </div>
+            <div class="price_pr_2_0_1__note">
+                Lưu ý: Bảng giá chưa bao gồm ưu đãi
+            </div>
+            <div class="price_pr_2_0_1__box ">
+
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    // Địa chỉ API
+    const apiUrl = 'https://scigroup.com.vn/app/api/store/?d=price-paris&cate=all';
+    console.log(apiUrl);
+
+    // Hàm để lấy dữ liệu từ API
+    async function fetchData() {
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error('Mạng lỗi: ' + response.status);
+            }
+            const data = await response.json();
+            console.log(data); // Hiển thị dữ liệu lên console
+            return data;
+        } catch (error) {
+            console.error('Có lỗi xảy ra:', error);
+        }
+    }
+
+    // Gọi hàm fetchData
+    fetchData().then(data => {
+        // Bạn có thể xử lý dữ liệu ở đây
+        if (data) {
+            // Lấy nội dung của tiêu đề
+            const titleElement = document.getElementById('price_pr_2_0_1__title');
+            const titleText = titleElement.textContent.trim(); // Lấy nội dung và loại bỏ khoảng trắng
+
+            // Hiển thị dữ liệu dựa trên tiêu đề
+            displayPriceData(data, titleText);
+        }
+    });
+
+    // Hàm hiển thị dữ liệu
+    function displayPriceData(data, category) {
+        const priceBox = document.querySelector('.price_pr_2_0_1__box');
+        priceBox.innerHTML = ''; // Xóa nội dung cũ
+
+        // Kiểm tra xem category có tồn tại trong dữ liệu không
+        if (data[category]) {
+            const services = data[category];
+            for (const group in services) {
+                services[group].forEach(service => {
+                    const itemHTML = `
+                    <div class="price_pr_2_0_1__item">
+                        <div class="price_pr_2_0_1__boxTop">
+                            <div class="price_pr_2_0_1__titleChild">${service.name}</div>
+                        </div>
+                        <div class="price_pr_2_0_1__pic">
+                            <img width="339" height="161" src="${service.image}" alt="">
+                        </div>
+                        <div class="price_pr_2_0_1__boxPrice">
+                            <div class="price_pr_2_0_1__itemPrice">
+                                <div class="price_pr_2_0_1__nameService">${service.name}</div>
+                                <div class="price_pr_2_0_1__price">${service.price.toLocaleString()} vnđ</div>
+                            </div>
+                        </div>
+                        <div class="price_pr_2_0_1__boxButton">
+                            <div class="price_pr_2_0_1__btn btnMore">Tìm hiểu thêm</div>
+                            <div class="price_pr_2_0_1__btn btnRegist">Đặt lịch ngay</div>
+                        </div>
+                    </div>
+                `;
+                    priceBox.innerHTML += itemHTML;
+                });
+            }
+        } else {
+            priceBox.innerHTML = '<p>Không có dịch vụ nào trong danh mục này.</p>';
+        }
+
+        sliderTab();
+    }
+</script>
+
+<script>
+    // Slider Mobile
+
+    function sliderTab() {
+        // Slider mobile
+        let dots = [];
+        if (window.innerWidth <= 767) {
+            const slider = document.querySelector('.price_pr_2_0_1__box');
+            const slideItems = document.querySelectorAll('.price_pr_2_0_1__item');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slideItems.forEach(item => {
+                    item.style.display = 'none';
+                });
+                if (slideItems[index]) {
+                    slideItems[index].style.display = 'block';
+                    activeDot(index);
+                }
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slideItems.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slideItems.length) % slideItems.length;
+                showSlide(currentSlide);
+            }
+
+            showSlide(currentSlide);
+
+            const dotsContainer = document.createElement('div');
+            dotsContainer.classList.add('price_pr_2_0_1__dots');
+
+            // Create dots for each slide
+            slideItems.forEach((item, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('price_pr_2_0_1__dot');
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    currentSlide = index;
+                });
+                dots.push(dot); // Thêm dot vào mảng dots
+                dotsContainer.appendChild(dot);
+            });
+
+            activeDot(currentSlide);
+
+            // Tạo thẻ div để chứa cả hai button
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('price_pr_2_0_1__controls');
+
+            // Tạo button prev
+            const prevButton = document.createElement('button');
+            prevButton.textContent = '❮';
+            prevButton.addEventListener('click', prevSlide);
+            prevButton.classList.add('price_pr_2_0_1__prev'); // Thêm class vào button
+
+            // Tạo button next
+            const nextButton = document.createElement('button');
+            nextButton.textContent = '❯';
+            nextButton.addEventListener('click', nextSlide);
+            nextButton.classList.add('price_pr_2_0_1__next'); // Thêm class vào button
+
+            // Thêm cả hai button vào thẻ div
+            buttonContainer.appendChild(prevButton);
+            buttonContainer.appendChild(nextButton);
+
+            const controlsContainer = document.createElement('div');
+            controlsContainer.classList.add('price_pr_2_0_1__controlsContainer');
+            controlsContainer.appendChild(dotsContainer);
+            controlsContainer.appendChild(buttonContainer);
+
+            // Thêm thẻ div chứa cả hai button vào slider
+            slider.appendChild(controlsContainer);
+
+            // Tạo sự kiện click cho dot
+            dotsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('price_pr_2_0_1__dot')) {
+                    const index = Array.from(dots).indexOf(e.target);
+                    showSlide(index);
+                }
+            });
+        }
+
+        function activeDot(index) {
+            if (dots && dots[index]) {
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                dots[index].classList.add('active');
+            }
+        }
+    }
+
+
+</script>
+
+</html>

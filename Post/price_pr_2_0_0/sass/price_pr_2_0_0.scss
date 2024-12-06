@@ -85,4 +85,47 @@
             }
         }
     }
+
+    &__controlsContainer {
+        position: relative;
+    }
+
+    &__dots {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__prev,
+    &__next {
+        background: transparent;
+        color: #419cd4;
+        font-size: 20px;
+        margin: 0;
+        padding: 5px 10px;
+        height: auto;
+        border: none;
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    &__dot {
+        width: 10px;
+        height: 10px;
+        background-color: #10b1e7;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
+
+        &.active {
+            background-color: #2a52be;
+            border: 1px solid #2a52be;
+        }
+    }
 }

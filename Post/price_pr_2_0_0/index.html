@@ -11,52 +11,176 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="price_pr_2_0_0__item">
-            <div class="price_pr_2_0_0__boxTop">
-                <div class="price_pr_2_0_0__titleChild">
-                    DIO UV Hàn Quốc
-                </div>
-            </div>
-            <div class="price_pr_2_0_0__pic">
-                <img width="339" height="161" src="images/img.jpg" alt="">
-            </div>
-            <div class="price_pr_2_0_0__boxPrice">
-                <div class="price_pr_2_0_0__itemPrice">
-                    <div class="price_pr_2_0_0__nameService">
-                        DIO UV Hàn Quốc
-                    </div>
-                    <div class="price_pr_2_0_0__price">
-                        12.000.000 vnđ
-                    </div>
-                </div>
-                <div class="price_pr_2_0_0__itemPrice">
-                    <div class="price_pr_2_0_0__nameService">
-                        DIO UV Hàn Quốc
-                    </div>
-                    <div class="price_pr_2_0_0__price">
-                        12.000.000 vnđ
-                    </div>
-                </div>
-                <div class="price_pr_2_0_0__itemPrice">
-                    <div class="price_pr_2_0_0__nameService">
-                        DIO UV Hàn Quốc
-                    </div>
-                    <div class="price_pr_2_0_0__price">
-                        12.000.000 vnđ
-                    </div>
-                </div>
-            </div>
-            <div class="price_pr_2_0_0__boxButton">
-                <div class="price_pr_2_0_0__btn btnMore">
-                    Tìm hiểu thêm
-                </div>
-                <div class="price_pr_2_0_0__btn btnRegist">
-                    Đặt lịch ngay
-                </div>
-            </div>
-        </div>
+    <div class="container price_pr_2_0_0__container">
+
     </div>
 </body>
+
+<script>
+    // Địa chỉ API
+    const apiUrl = 'https://scigroup.com.vn/app/api/store/?d=price-paris&cate=all';
+    console.log(apiUrl);
+
+    // Hàm để lấy dữ liệu từ API
+    async function fetchData() {
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error('Mạng lỗi: ' + response.status);
+            }
+            const data = await response.json();
+            console.log(data); // Hiển thị dữ liệu lên console
+            return data;
+        } catch (error) {
+            console.error('Có lỗi xảy ra:', error);
+        }
+    }
+
+    // Gọi hàm fetchData
+    fetchData().then(data => {
+        // Bạn có thể xử lý dữ liệu ở đây
+        if (data) {
+            // Ví dụ: hiển thị dữ liệu cho Niềng răng mắc cài kim loại
+            displayPriceData(data, "Niềng Răng", "Niềng răng mắc cài kim loại");
+        }
+    });
+
+    // Hàm hiển thị dữ liệu
+    function displayPriceData(data, category, group) {
+        const priceBoxContainer = document.querySelector('.price_pr_2_0_0__container');
+        priceBoxContainer.innerHTML = ''; // Xóa nội dung cũ
+
+        // Kiểm tra xem category và group có tồn tại trong dữ liệu không
+        if (data[category] && data[category][group]) {
+            const services = data[category][group];
+            services.forEach(service => {
+                const itemHTML = `
+                <div class="price_pr_2_0_0__item">
+                    <div class="price_pr_2_0_0__boxTop">
+                        <div class="price_pr_2_0_0__titleChild">${service.name}</div>
+                    </div>
+                    <div class="price_pr_2_0_0__pic">
+                        <img width="339" height="161" src="${service.image}" alt="">
+                    </div>
+                    <div class="price_pr_2_0_0__boxPrice">
+                        <div class="price_pr_2_0_0__itemPrice">
+                            <div class="price_pr_2_0_0__nameService">${service.name}</div>
+                            <div class="price_pr_2_0_0__price">${service.price.toLocaleString()} vnđ</div>
+                        </div>
+                    </div>
+                    <div class="price_pr_2_0_0__boxButton">
+                        <div class="price_pr_2_0_0__btn btnMore">Tìm hiểu thêm</div>
+                        <div class="price_pr_2_0_0__btn btnRegist">Đặt lịch ngay</div>
+                    </div>
+                </div>
+            `;
+                priceBoxContainer.innerHTML += itemHTML;
+            });
+        } else {
+            priceBoxContainer.innerHTML = '<p>Không có dịch vụ nào trong nhóm này.</p>';
+        }
+
+        sliderTab();
+    }
+</script>
+
+<script>
+    // Slider Mobile
+
+    function sliderTab() {
+        // Slider mobile
+        let dots = [];
+
+        const slider = document.querySelector('.price_pr_2_0_0__container');
+        const slideItems = document.querySelectorAll('.price_pr_2_0_0__item');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slideItems.forEach(item => {
+                item.style.display = 'none';
+            });
+            if (slideItems[index]) {
+                slideItems[index].style.display = 'block';
+                activeDot(index);
+            }
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideItems.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideItems.length) % slideItems.length;
+            showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+
+        const dotsContainer = document.createElement('div');
+        dotsContainer.classList.add('price_pr_2_0_0__dots');
+
+        // Create dots for each slide
+        slideItems.forEach((item, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('price_pr_2_0_0__dot');
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                currentSlide = index;
+            });
+            dots.push(dot); // Thêm dot vào mảng dots
+            dotsContainer.appendChild(dot);
+        });
+
+        activeDot(currentSlide);
+
+        // Tạo thẻ div để chứa cả hai button
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('price_pr_2_0_0__controls');
+
+        // Tạo button prev
+        const prevButton = document.createElement('button');
+        prevButton.textContent = '❮';
+        prevButton.addEventListener('click', prevSlide);
+        prevButton.classList.add('price_pr_2_0_0__prev'); // Thêm class vào button
+
+        // Tạo button next
+        const nextButton = document.createElement('button');
+        nextButton.textContent = '❯';
+        nextButton.addEventListener('click', nextSlide);
+        nextButton.classList.add('price_pr_2_0_0__next'); // Thêm class vào button
+
+        // Thêm cả hai button vào thẻ div
+        buttonContainer.appendChild(prevButton);
+        buttonContainer.appendChild(nextButton);
+
+        const controlsContainer = document.createElement('div');
+        controlsContainer.classList.add('price_pr_2_0_0__controlsContainer');
+        controlsContainer.appendChild(dotsContainer);
+        controlsContainer.appendChild(buttonContainer);
+
+        // Thêm thẻ div chứa cả hai button vào slider
+        slider.appendChild(controlsContainer);
+
+        // Tạo sự kiện click cho dot
+        dotsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('price_pr_2_0_0__dot')) {
+                const index = Array.from(dots).indexOf(e.target);
+                showSlide(index);
+            }
+        });
+
+
+        function activeDot(index) {
+            if (dots && dots[index]) {
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                dots[index].classList.add('active');
+            }
+        }
+    }
+
+</script>
 
 </html>
